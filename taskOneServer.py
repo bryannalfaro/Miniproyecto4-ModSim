@@ -2,10 +2,15 @@ import math
 import random
 
 #Based on Sheldon Ross, Simulation, 5th Edition.
-
+"""
+Universidad del Valle de Guatemala
+Bryann Alfaro 19372
+Diego Arredondo 19422
+Miniproyecto 4
+"""
 #Un servidor
 capacity_server_mountain = 100
-clients_per_second_mountain = 2400/60
+clients_per_second_mountain = 6000/60
 
 #Se utiliza distribucion Poisson para llegadas
 def poisson_generation(t , lambda_value):

@@ -3,11 +3,17 @@ import numpy as np
 import random
 
 #Based on Sheldon Ross, Simulation, 5th Edition.
+"""
+Universidad del Valle de Guatemala
+Bryann Alfaro 19372
+Diego Arredondo 19422
+Miniproyecto 4
+"""
 
 #Un servidor
 capacity_server_pizzita = 10
-clients_per_second_pizzita = 2400/60
-servers_amount_pizzita = 17
+clients_per_second_pizzita = 6000/60
+servers_amount_pizzita = 30
 
 #Se utiliza distribucion Poisson para llegadas
 def poisson_generation(t , lambda_value):
@@ -150,4 +156,4 @@ print('Salida de la ultima solicitud', departure_time[nd])
 
 
 #Task 2
-print(len(queue_time))
+print(f"Con { servers_amount_pizzita} servidores , se obtuvo un lista de espera de: {len(queue_time)}")
