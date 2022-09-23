@@ -1,6 +1,8 @@
 import math
 import random
 
+#Based on Sheldon Ross, Simulation, 5th Edition.
+
 #Un servidor
 capacity_server_mountain = 100
 clients_per_second_mountain = 2400/60
@@ -32,7 +34,7 @@ while t <= T or n>0:
         ta = poisson_generation(t, clients_per_second_mountain) #Se genera la proxima llegada
         arrival_time[na] = t
         if n == 1:
-            Y = random.expovariate(100) #se genera el tiempo de servicio
+            Y = random.expovariate(capacity_server_mountain) #se genera el tiempo de servicio
             td = t + Y #Se mueve en el tiempo
             occupied_time_list.append(Y) #Se agrega tiempo de servicio
             occupied_time += Y #Se suma el tiempo de servicio
@@ -44,7 +46,7 @@ while t <= T or n>0:
         if n == 0: #Si no hay clientes en el sistema
             td = math.inf
         else:
-            Y = random.expovariate(100) #se genera el tiempo de servicio
+            Y = random.expovariate(capacity_server_mountain) #se genera el tiempo de servicio
             td = t + Y #Se mueve en el tiempo
             occupied_time += Y #Se suma el tiempo de servicio
             occupied_time_list.append(Y) #Se agrega tiempo de servicio
@@ -54,7 +56,7 @@ while t <= T or n>0:
         n -= 1
         nd += 1
         if n >  0: #Si hay clientes en el sistema
-            Y = random.expovariate(100) #se genera el tiempo de servicio
+            Y = random.expovariate(capacity_server_mountain) #se genera el tiempo de servicio
             td = t + Y #Se mueve en el tiempo
             occupied_time += Y #Se suma el tiempo de servicio
             occupied_time_list.append(Y) #Se agrega tiempo de servicio
